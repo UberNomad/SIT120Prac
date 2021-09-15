@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Week 1 Prac</title>
+</head>
+<script>
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+var m = String(today.getMinutes());
+var hr = String(today.getHours());
+
+today = mm + '/' + dd + '/' + yyyy;
+time = hr + ':' + m;
+</script>
+<style>
+nav {
+	margin: 0 auto 60px auto;
+}
+
+nav a {
+	text-decoration: none;
+	color: red;
+	margin-right: 10px;
+}
+</style>
+<body>
+	<main>
+		<!--Element 1-->
+		<nav>
+			<a href="#">Link 1</a>
+			<a href="#">Link 2</a>
+			<a href="#">Link 3</a>
+			<a href="#">Link 4</a>
+			<a href="#">Link 5</a>
+		</nav>
+		<!--Element 2-->
+		<h1>Week 1 Practical</h1>
+		<!--Element 3-->
+		<p>This is the index file for the week 1 practical of SIT120</p>
+		<img src="assets\Beautiful_landscape.jpg" style="border: 3px solid black" />
+		<!--Element 4-->
+		<h2>A Table</h2>
+		<table>
+			<tr>
+				<th>Example 1</th>
+				<th>Example 2</th>
+				<th>Example 3</th>
+			</tr>
+			<tr>
+				<th>Aanother Example 1</th>
+				<th>Another Example 2</th>
+				<th>Another Example 3</th>
+			</tr>
+			<tr>
+				<th>More Example 1</th>
+				<th>More Example 2</th>
+				<th>More Example 3</th>
+			</tr>
+		</table>
+		<div id="todo-list">
+			<form v-on:submit.prevent="addNewTodo">
+				<label for="new-todo">Add a todo</label>
+				<input
+				  v-model="newTodoText"
+				  id="new-todo"
+				  placeholder="E.g. Feed the cat"
+				>
+				<button>Add</button>
+			</form>
+			<ul>
+				<li
+				  is="todo-item"
+				  v-for="(todo, index) in todos"
+				  v-bind:key="todo.id"
+				  v-bind:title="todo.title"
+				  v-on:remove="todos.splice(index, 1)"
+				></li>
+			</ul>
+		</div>
+		<p>
+			<span class="date"><script>document.write(today);</script></span>
+			<span class="time"><script>document.write(time);</script></span>
+		</p>
+        <!--Element 5-->
+		<footer>
+			<span>Copyright information | Blah Blah Blah</span>
+		</footer>
+	</main>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="vue.js"></script>

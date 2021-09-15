@@ -1,0 +1,43 @@
+main {
+	width: 40%;
+	margin: 0 auto;
+}
+
+h1 {
+	font-size: 3em;
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+h2 {
+	font-size: 2em;
+	margin-bottom: 30px;
+}
+
+p {
+	font-size: 1.3em;
+	margin-bottom: 20px;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+	margin-bottom: 50px;
+}
+
+table {
+	margin-bottom: 50px;
+}
+
+table th {
+	padding: 20px;
+	border: 1px solid black;
+}
+
+footer {
+	text-align: center;
+}
+
+#todo-list {
+	margin-bottom: 60px;
+}
